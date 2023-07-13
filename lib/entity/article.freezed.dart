@@ -20,6 +20,7 @@ Article _$ArticleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Article {
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
@@ -33,7 +34,7 @@ abstract class $ArticleCopyWith<$Res> {
   factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
       _$ArticleCopyWithImpl<$Res, Article>;
   @useResult
-  $Res call({String title, String url});
+  $Res call({String id, String title, String url});
 }
 
 /// @nodoc
@@ -49,10 +50,15 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? url = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -72,7 +78,7 @@ abstract class _$$_ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       __$$_ArticleCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, String url});
+  $Res call({String id, String title, String url});
 }
 
 /// @nodoc
@@ -85,10 +91,15 @@ class __$$_ArticleCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? url = null,
   }) {
     return _then(_$_Article(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -104,11 +115,13 @@ class __$$_ArticleCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Article implements _Article {
-  const _$_Article({required this.title, required this.url});
+  const _$_Article({required this.id, required this.title, required this.url});
 
   factory _$_Article.fromJson(Map<String, dynamic> json) =>
       _$$_ArticleFromJson(json);
 
+  @override
+  final String id;
   @override
   final String title;
   @override
@@ -116,7 +129,7 @@ class _$_Article implements _Article {
 
   @override
   String toString() {
-    return 'Article(title: $title, url: $url)';
+    return 'Article(id: $id, title: $title, url: $url)';
   }
 
   @override
@@ -124,13 +137,14 @@ class _$_Article implements _Article {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Article &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, url);
+  int get hashCode => Object.hash(runtimeType, id, title, url);
 
   @JsonKey(ignore: true)
   @override
@@ -148,10 +162,14 @@ class _$_Article implements _Article {
 
 abstract class _Article implements Article {
   const factory _Article(
-      {required final String title, required final String url}) = _$_Article;
+      {required final String id,
+      required final String title,
+      required final String url}) = _$_Article;
 
   factory _Article.fromJson(Map<String, dynamic> json) = _$_Article.fromJson;
 
+  @override
+  String get id;
   @override
   String get title;
   @override
