@@ -5,9 +5,9 @@ import 'package:sample_app/entity/article.dart';
 class QiitaAPIRepository {
   final dio = Dio();
 
-  Future<Article> fetchItem(String id) async {
+  Future<List<Article>> fetchItems() async {
     final client = RestClient(dio);
-    final response = await client.fetchItem(id);
+    final response = await client.fetchItems();
     return response;
   }
 }
