@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:sample_app/view/abstract_widget.dart';
-import 'package:sample_app/view/page/like/likeView.dart';
-import 'package:sample_app/view/page/top/topView.dart';
+import 'package:sample_app/view/page/like/like_view.dart';
+import 'package:sample_app/view/page/top/top_view.dart';
 
 
 class BottomNavigationPage extends AbstractStatelessWidget {
